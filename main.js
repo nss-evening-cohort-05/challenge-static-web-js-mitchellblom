@@ -3,11 +3,13 @@ var treeStack = "";
 button.addEventListener("click", showMe);
 // document.addEventListener("keypress", showMe);
 
-// function enterKeyPressed(keypress){
-//  if (keypress.which === 13) {
+// button.addEventListener("keypress", showMe);
+// document.onkeydown = function() {
+//  if (window.event.keyCode === 13) {
 //    showMe();
 //  } 
 // }
+
 
 function showMe (clickEvent) {
 	var userHeight = document.getElementById("inputHeight").value;
