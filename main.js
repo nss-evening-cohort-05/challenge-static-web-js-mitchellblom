@@ -1,25 +1,15 @@
-var button = document.getElementById("showMe");
+var userHeight = document.getElementById("inputHeight").value;
 var userChar = document.getElementById("inputCharacter");
-var userHeight = document.getElementById("inputHeight");
-
-console.log("User chooses this height: ", userHeight);
-
-var symbol = [userChar];
+var button = document.getElementById("showMe");
 var treeStack = "";
-
-console.log("User chooses this character: ", userChar);
 
 button.addEventListener("click", showMe);
 
-
-function createTree () {
-  for (i = 0; i < symbol.length; i++) {
-  	treeStack += symbol[i];
+function showMe (clickEvent) {
+	for (i = 0; i < userHeight; i++) {
+  	treeStack += userChar;
   	console.log(treeStack);
   } 
- }
+}
 
-
-
-
-createTree(treeStack);
+showMe(treeStack);
