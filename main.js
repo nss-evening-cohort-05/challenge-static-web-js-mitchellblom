@@ -1,34 +1,22 @@
 var button = document.getElementById("showMe");
 var treeStack = "";
 button.addEventListener("click", showMe);
-// document.addEventListener("keypress", showMe);
 
-// button.addEventListener("keypress", showMe);
-// document.onkeydown = function() {
-//  if (window.event.keyCode === 13) {
-//    showMe();
-//  } 
-// }
-
+document.onkeydown = function() {
+ if (window.event.keyCode === 13) {
+   showMe();
+ } 
+}
 
 function showMe (clickEvent) {
 	var userHeight = document.getElementById("inputHeight").value;
 	var userChar = document.getElementById("inputCharacter").value;
-	var space = "_";
-
-  		for (i = userHeight; i >= 0 ; i--) {
-  			var spaceLoop = "";
-			spaceLoop += space[i];
-  } 
-			console.log(spaceLoop);
+	var space = " ";
 
 		for (j = 0; j < userHeight; j++) {
-			treeStack += spaceLoop;
+			var spaceLoop = "";
+			spaceLoop += space.repeat((userHeight-[j])/2);
   			treeStack += userChar;
-  			console.log(treeStack);
+  			console.log(spaceLoop + treeStack);
   } 
-
-// console.log(spaceLoop + treeStack)
-
 }
-
