@@ -1,15 +1,19 @@
 var button = document.getElementById("showMe");
 var treeStack = "";
-button.addEventListener("click", showMe);
+button.addEventListener("click", treeBuilder);
 
 document.onkeydown = function() {
  if (window.event.keyCode === 13) {
-   showMe();
+   treeBuilder();
  } 
 }
 
-function showMe (clickEvent) {
+function treeBuilder(clickOrEnter) {
+	showMe();
+}
 
+function showMe (clickEvent) {
+	
 	var userHeight = document.getElementById("inputHeight").value;
 	var userChar = document.getElementById("inputCharacter").value;
 	var space = " ";
