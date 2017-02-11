@@ -1,34 +1,36 @@
 var button = document.getElementById("showMe");
 var treeStack = "";
-button.addEventListener("click", treeBuilder);
+button.addEventListener("click", validateInput);
 
 document.onkeydown = function() {
  if (window.event.keyCode === 13) {
-   treeBuilder();
+   validateInput();
  } 
 }
 
-function treeBuilder(clickOrEnter) {
-	showMe();
+function validateInput(e) {
+	var userInput = {
+		userHeight: document.getElementById("inputHeight").value,
+		userChar: document.getElementById("inputCharacter").value
+	}
+	if (userInput.userHeight === "" || userInput.userChar === "") {
+		alert("Both fields must have a value!")
+	} else {
+		showMe(userInput);
+	}
 }
 
-function showMe (clickEvent) {
+function showMe (userInputObject) {
 	
-	var userHeight = document.getElementById("inputHeight").value;
-	var userChar = document.getElementById("inputCharacter").value;
 	var space = " ";
 	var tree = "";
-
-		if (userHeight === "" || userChar === "") {
-				alert("Both fields must have a value!")
-			} 
-			
-		for (j = 0; j < userHeight; j++) {
-			var spaceLoop = "";
-			spaceLoop = space.repeat(userHeight-[j]+1);
-  			treeStack = userChar.repeat([j]*2+1);
-  			tree += spaceLoop + treeStack;
-  			tree += "\n";
-  }
-  			console.log(tree);
+	
+	for (j = 0; j < userInputObject.userHeight; j++) {
+		var spaceLoop = "";
+		spaceLoop = space.repeat(userInputObject.userHeight-j+1);
+		treeStack = userInputObject.userChar.repeat(j*2+1);
+		tree += spaceLoop + treeStack;
+		tree += "\n";
+ 	}
+  	console.log(tree);
 }
