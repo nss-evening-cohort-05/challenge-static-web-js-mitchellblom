@@ -7,7 +7,7 @@ button.addEventListener("click", showMe);
 
 function showMe (clickEvent) {
 	for (i = 0; i < userHeight; i++) {
-  	treeStack += userChar;
+  	treeStack += userChar[i];
   	console.log(treeStack);
   } 
 }
