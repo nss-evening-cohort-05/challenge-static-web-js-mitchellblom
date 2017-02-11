@@ -1,21 +1,19 @@
 var button = document.getElementById("showMe");
 var treeStack = "";
+var space = " ";
 
 button.addEventListener("click", showMe);
 
 function showMe (clickEvent) {
 	var userHeight = document.getElementById("inputHeight").value;
 	var userChar = document.getElementById("inputCharacter").value;
-	console.log(userHeight);
-	console.log(userChar);
+		for (i = 0; i < userHeight; i++) {
+  			// treeStack += parseInt(userHeight/2) * space + userChar;
+  			treeStack += userChar;
+  			console.log(treeStack);
+  } 
 }
 
-// function showMe (clickEvent) {
-// 	for (i = 0; i < userHeight; i++) {
-//   	treeStack += userChar;
-//   	console.log(treeStack);
-//   } 
-// }
 
 // showMe(userChar);
 
